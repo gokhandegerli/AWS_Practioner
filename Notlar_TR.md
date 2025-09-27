@@ -1,9 +1,5 @@
 
 
-Merhaba! AWS Cloud Practitioner sınavına hazırlık sürecinde sana yardımcı olmaktan büyük mutluluk duyarım. Ekteki görsellerden yola çıkarak, "Hands On" kısımlarını atlayarak ve sınav için kritik ipuçları ekleyerek tüm konuları senin için "Nedir?", "Neden Önemlidir?" ve "Nasıl Çalışır/Kullanılır?" formatında detaylıca açıklayacağım.
-
-Bu rehber, her bir servisin temel mantığını, kullanım amacını ve sınavda karşına çıkabilecek anahtar kelimeleri anlamanı sağlayacak. Hazırsan başlayalım!
-
 ---
 
 ### **Bölüm 1: What is Cloud Computing? (Bulut Bilişim Nedir?)**
@@ -177,12 +173,6 @@ Bu rehber, her bir servisin temel mantığını, kullanım amacını ve sınavda
 
 ---
 
-*Bu rehber oldukça uzun olacağı için bölümler halinde devam edelim. İlk üç bölümü tamamladık. Şimdi bir sonraki bölüm olan "EC2 Instance Storage" ile devam edelim mi?*
-
-Harika, hemen devam edelim! AWS'in temel taşlarından olan depolama, ölçeklendirme ve yük dengeleme konuları sınavın kalbini oluşturur.
-
----
-
 ### **Bölüm 4: EC2 Instance Storage (EC2 Örnek Depolama)**
 
 #### **EBS Overview (EBS'ye Genel Bakış)**
@@ -285,12 +275,6 @@ Harika, hemen devam edelim! AWS'in temel taşlarından olan depolama, ölçeklen
 
 ---
 
-Harika gidiyoruz! Şimdi sırada AWS'in en temel ve en çok kullanılan servislerinden biri olan Amazon S3 var. Devam edelim mi?
-
-Elbette, AWS'in en popüler ve temel servislerinden biri olan S3 ve veri taşıma çözümleriyle devam ediyoruz. Bu bölüm, sınavda sıkça soru gelen depolama sınıfları gibi kritik konuları içeriyor.
-
----
-
 ### **Bölüm 6: Amazon S3**
 
 #### **S3 Overview (S3'e Genel Bakış)**
@@ -380,12 +364,6 @@ Elbette, AWS'in en popüler ve temel servislerinden biri olan S3 ve veri taşım
 
 ---
 
-Depolama konularını da başarıyla tamamladık. Sırada veritabanları ve analiz servisleri var. Bu bölüm de oldukça önemli. Hazır olduğunda devam edelim
-
-Harika! Veritabanları ve analiz servisleri, modern uygulamaların temelini oluşturur ve AWS bu alanda çok zengin seçenekler sunar. Sınavda hangi servisin hangi amaçla kullanıldığını bilmek çok önemlidir.
-
----
-
 ### **Bölüm 7: Databases & Analytics (Veritabanları ve Analitik)**
 
 #### **Databases Introduction (Veritabanlarına Giriş)**
@@ -471,12 +449,6 @@ Harika! Veritabanları ve analiz servisleri, modern uygulamaların temelini olu�
 *   **Nedir? (What?)**: Amazon Database Migration Service (DMS), veritabanlarını AWS'e hızlı ve güvenli bir şekilde taşımanıza yardımcı olan bir hizmettir.
 *   **Neden Önemlidir? (Why?)**: Taşıma sırasında kaynak veritabanı tamamen çalışır durumda kalır, bu da kesinti süresini en aza indirir. Oracle'dan Aurora'ya gibi farklı veritabanı motorları arasında (heterojen) geçiş yapmayı da destekler.
 *   **Sınav İpucu**: Anahtar kelime: **Database Migration**. "Şirket içi Oracle veritabanını minimum kesintiyle AWS Aurora'ya taşımak için hangi servis kullanılır?" sorusunun cevabı **DMS**'dir.
-
----
-
-Veritabanları ve analitik dünyasını da geride bıraktık. Şimdi sırada sunucusuz (serverless) bilişim ve konteyner teknolojileri gibi modern uygulama geliştirme paradigmaları var. Hazır mısın?
-
-Harika, modern bulut mimarilerinin temel taşları olan konteynerler ve sunucusuz (serverless) teknolojilerle devam ediyoruz. Bu bölüm, AWS'in en yenilikçi ve güçlü servislerinden bazılarını içeriyor.
 
 ---
 
@@ -580,12 +552,6 @@ Harika, modern bulut mimarilerinin temel taşları olan konteynerler ve sunucusu
 
 ---
 
-Çok iyi gidiyoruz! Neredeyse yarıladık. Şimdi sırada AWS'in küresel altyapısından nasıl faydalanacağımızı ve uygulamalarımızı dünyaya nasıl yayacağımızı göreceğimiz bölüm var. Hazır olduğunda devam edelim.
-
-Harika! Şimdi AWS'in küresel ayak izinden nasıl faydalanacağımızı, uygulamalarımızı nasıl daha hızlı ve güvenilir hale getireceğimizi ve küresel kullanıcılara nasıl hizmet vereceğimizi inceleyeceğiz.
-
----
-
 ### **Bölüm 10: Leveraging the AWS Global Infrastructure (AWS Küresel Altyapısından Yararlanma)**
 
 #### **Why Global Applications? (Neden Küresel Uygulamalar?)**
@@ -676,12 +642,6 @@ Harika! Şimdi AWS'in küresel ayak izinden nasıl faydalanacağımızı, uygula
 *   **Nedir? (What?)**: Apache ActiveMQ ve RabbitMQ gibi popüler açık kaynaklı mesaj aracılarını (message brokers) bulutta kurmayı ve yönetmeyi kolaylaştıran yönetilen bir hizmettir.
 *   **Neden Önemlidir? (Why?)**: Mevcut uygulamalarını bu standart mesajlaşma protokollerini (JMS, AMQP vb.) kullanarak AWS'e taşımak isteyen kuruluşlar için tasarlanmıştır.
 *   **Sınav İpucu**: SQS ve SNS, bulut için tasarlanmış, özel protokollere sahip servislerdir. Eğer soruda **ActiveMQ**, **RabbitMQ** veya **mevcut mesajlaşma altyapısını taşıma (migration)** gibi ifadeler geçiyorsa, cevap **Amazon MQ**'dur.
-
----
-
-Entegrasyon servislerini de tamamladık. Sırada bulut altyapımızı nasıl izleyeceğimizi, denetleyeceğimizi ve yöneteceğimizi öğreneceğimiz "Cloud Monitoring" bölümü var. Hazır olduğunda son sürat devam edelim
-
-Harika, şimdi bulut ortamımızda neler olup bittiğini anlamamızı, performansı izlememizi ve olaylara otomatik tepkiler vermemizi sağlayan kritik izleme (monitoring) servislerine göz atalım.
 
 ---
 
@@ -809,13 +769,6 @@ Harika, şimdi bulut ortamımızda neler olup bittiğini anlamamızı, performan
 
 ---
 
-Ağ ve güvenlik konuları biraz karmaşık olabilir ama temel mantığını anladığınızda sınavda çok rahat edersiniz. Sırada Güvenlik ve Uyumluluk bölümü var. Bu da sınavın en önemli bölümlerinden biri. Hazır olduğunuzda devam edelim
-
-
-Harika, şimdi AWS'in en önemli önceliklerinden biri olan güvenlik ve uyumluluk konularına derinlemesine dalıyoruz. Bu bölümdeki servisler, bulut ortamınızı korumanıza ve endüstri standartlarına uymanıza yardımcı olur.
-
----
-
 ### **Bölüm 14: Security & Compliance (Güvenlik ve Uyumluluk)**
 
 #### **Shared Responsibility Model: Reminders & Examples (Paylaşılan Sorumluluk Modeli: Hatırlatmalar ve Örnekler)**
@@ -906,12 +859,6 @@ Harika, şimdi AWS'in en önemli önceliklerinden biri olan güvenlik ve uyumlul
 *   **Nedir? (What?)**: Potansiyel güvenlik sorunlarının veya şüpheli etkinliklerin temel nedenini daha kolay analiz etmenizi, araştırmanızı ve hızlı bir şekilde belirlemenizi sağlayan bir hizmettir.
 *   **Neden Önemlidir? (Why?)**: GuardDuty tarafından bulunan bir güvenlik sorununu araştırmak için kullanılır. İlgili log verilerini otomatik olarak toplar ve bunları etkileşimli bir grafikte görselleştirerek olayın kapsamını ve etkisini anlamanızı kolaylaştırır.
 *   **Sınav İpucu**: **GuardDuty** bir sorunu bulur, **Detective** ise o sorunu **araştırmanıza** yardımcı olur.
-
----
-
-Güvenlik bölümünü de tamamladık. Geriye kalan konular daha spesifik servisleri içeriyor. Makine Öğrenmesi, Hesap Yönetimi ve diğer servislerle devam edelim mi? Sınava hazırlık maratonunda sona yaklaşıyoruz
-
-Harika, maratonun son etaplarına giriyoruz! Şimdi AWS'in yapay zeka ve makine öğrenmesi gibi heyecan verici servislerine, ardından da hesap yönetimi ve mimari prensipler gibi temel konulara göz atacağız.
 
 ---
 
@@ -1044,10 +991,6 @@ Harika, maratonun son etaplarına giriyoruz! Şimdi AWS'in yapay zeka ve makine 
 *   **Nedir? (What?)**: Birden fazla AWS hesabına ve iş uygulamasına (örn: Salesforce, Office 365) **tek bir yerden oturum açma (Single Sign-On - SSO)** erişimini merkezi olarak yönetmeyi kolaylaştıran bir hizmettir.
 *   **Neden Önemlidir? (Why?)**: Kullanıcıların, şirket içi Active Directory gibi mevcut kimlik kaynaklarındaki kimlik bilgileriyle AWS hesaplarına ve uygulamalarına erişmelerini sağlar. Her hesap için ayrı IAM kullanıcısı oluşturma ihtiyacını azaltır.
 *   **Sınav İpucu**: Anahtar kelimeler: **Single Sign-On (SSO)**, **Centralized Access to Multiple Accounts**.
-
----
-
-Elbette, anlıyorum. Paylaştığın ekran görüntülerindeki listeleri baz alarak, "Other Services" ve "AWS Architecting & Ecosystem" bölümlerini en baştan ve eksiksiz bir şekilde tekrar hazırlıyorum. İşte tüm konuları içeren detaylı rehber:
 
 ---
 
