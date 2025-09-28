@@ -1033,6 +1033,32 @@ Bu bölüm, belirli bir kategoriye tam olarak girmeyen ancak AWS'in sunduğu çe
 *   **Disaster Recovery Strategies (Felaket Kurtarma Stratejileri)**
     *   **Nedir? (What?)**: Bir felaket durumunda iş sürekliliğini sağlamak için kullanılan, maliyet ve kurtarma süresine göre sıralanan yöntemlerdir: **Backup and Restore** (en ucuz, en yavaş), **Pilot Light**, **Warm Standby**, **Multi-site / Hot-Hot** (en pahalı, en hızlı).
     *   **Sınav İpucu**: Bu dört stratejiyi ve aralarındaki maliyet/kurtarma süresi (RTO/RPO) farkını bilmek önemlidir.
+    *   Disaster Recovery Strategies (Felaket Kurtarma Stratejileri)
+Felaket Kurtarma (DR) stratejileri, bir kesinti (doğal afet, siber saldırı, büyük sistem hatası vb.) durumunda iş sürekliliğini sağlamak ve operasyonları mümkün olan en kısa sürede geri yüklemek için kullanılan yaklaşımlardır. Bu stratejiler, belirlenen iki ana hedefe göre maliyet ve karmaşıklık açısından sıralanır:
+RTO (Recovery Time Objective - Kurtarma Süresi Hedefi): Kesintiden sonra sistemlerin ne kadar sürede tekrar çalışır duruma gelmesi gerektiğini belirtir. Ne kadar hızlı?
+RPO (Recovery Point Objective - Kurtarma Noktası Hedefi): Bir felaket anında ne kadarlık bir veri kaybını kabul edebileceğimizi gösterir. Ne kadar veri kaybedilebilir?
+İşte maliyet ve hız sırasına göre temel DR stratejileri:
+1. Backup and Restore (Yedekle ve Geri Yükle)
+Açıklama: Verilerin düzenli olarak yedeklenmesi ve bir felaket durumunda bu yedeklerden geri yüklenmesidir.
+Maliyet: En ucuz. Sadece yedek depolama maliyeti ve yedekleme mekanizması vardır.
+Hız/Karmaşıklık: En yavaş/En yüksek RTO ve RPO. Geri yükleme işlemi zaman alıcı olabilir ve son yedeklemeden sonraki veriler kaybolur.
+AWS Örnekleri: Amazon S3'te yedeklemek, AWS Backup hizmetini kullanmak.
+
+2. Pilot Light (Kılavuz Işık)
+Açıklama: Kritik olmayan sistemleri kapatıp sadece temel işlevsellik için gereken minimum kaynakları (veritabanı gibi) çalışır durumda tutmaktır. Bir felaket anında, geri kalan uygulama ve sunucular (bir "pilot ışık"tan tam bir ateşe dönüşmek gibi) hızlıca devreye alınır.
+Maliyet: Düşük. DR bölgesi tam kapasite çalışmadığı için maliyet düşüktür.
+Hız/Karmaşıklık: Orta. Yedekle-Geri Yükle'den daha hızlıdır çünkü veritabanı önceden senkronize edilmiştir ve bazı altyapı hazırdır.
+
+3. Warm Standby (Sıcak Bekleme)
+Açıklama: Üretim ortamının ölçeklendirilmiş, çalışan bir kopyasının DR bölgesinde sürekli hazır tutulmasıdır. Bu kopya, gelen trafiği karşılayacak kapasiteye tam olarak sahip değildir ancak bir felaket anında hızla ölçeklendirilebilir.
+Maliyet: Orta-Yüksek. Pilot Light'tan daha pahalıdır çünkü daha fazla kaynak sürekli çalışır haldedir.
+Hız/Karmaşıklık: Hızlı. RTO/RPO hedefleri düşüktür. Tamamen devreye alma süresi Pilot Light'tan daha kısadır.
+
+4. Multi-site / Hot-Hot (Çoklu Bölge / Aktif-Aktif)
+Açıklama: Üretim ortamının tam, ölçeklendirilmiş bir kopyasının başka bir AWS Bölgesinde (Region) aktif olarak çalıştırılmasıdır. Her iki bölge de trafiği aynı anda işleyebilir. Bir bölge çökerse, tüm trafik anında diğer bölgeye yönlendirilir.
+Maliyet: En pahalı. Aynı anda iki tam kapasiteli ortam çalıştırmak demektir.
+Hız/Karmaşıklık: En hızlı/En düşük RTO ve RPO. Kesinti süresi neredeyse sıfırdır (saniyeler mertebesinde). Uygulamalar yüksek erişilebilirlik (High Availability) ve DR sağlar.
+AWS Örnekleri: Amazon Route 53 ile trafiği sağlıklı bölgeler arasında dağıtmak.
 
 *   **AWS Elastic Disaster Recovery (DRS)**
     *   **Nedir? (What?)**: Şirket içi ve bulut tabanlı uygulamalarınızın AWS'e hızlı ve güvenilir bir şekilde kurtarılmasını sağlayan bir felaket kurtarma hizmetidir.
@@ -1044,6 +1070,14 @@ Bu bölüm, belirli bir kategoriye tam olarak girmeyen ancak AWS'in sunduğu çe
 
 *   **Cloud Migration Strategies - The 7Rs (Bulut Taşıma Stratejileri - 7R)**
     *   **Nedir? (What?)**: Uygulamaları buluta taşırken izlenebilecek yedi yaygın stratejidir: **Rehost** (Lift-and-Shift), **Replatform** (Lift-and-Tinker), **Repurchase** (Drop-and-Shop), **Refactor/Re-architect**, **Retire**, **Retain**, **Relocate**.
+    *   Strateji (R)	Açıklama	Ne Zaman Kullanılır?	Maliyet/Süre
+1. Rehost	(Lift-and-Shift - Kaldır ve Taşı) Uygulamayı olduğu gibi, minimum değişiklik veya optimizasyon ile buluta taşımaktır.	Hızlı bir başlangıç gerektiğinde veya uygulamada kod değişikliği istenmediğinde.	Hızlı, en az maliyetli ilk adım.
+2. Replatform	(Lift-and-Tinker - Kaldır ve Oynama) Uygulamanın temel mimarisi korunur ancak bazı bulut faydaları için optimizasyonlar yapılır (örneğin, şirket içi veritabanını AWS RDS'e geçirmek).	Bulutun yönetilen hizmetlerinden yararlanmak istendiğinde.	Rehost'tan daha fazla çaba gerektirir.
+3. Repurchase	(Drop-and-Shop - Bırak ve Alışveriş Et) Lisanslı bir uygulamayı bırakıp yerine bulut tabanlı bir SaaS (Yazılım Hizmeti) çözümü (örneğin, CRM için Salesforce veya Office 365) almaktır.	Uygulamanın bakımı ve yönetimi dış kaynaklara devredilmek istendiğinde.	Uzun vadede operasyonel yükü en aza indirir.
+4. Refactor / Re-architect	Uygulamanın bulutun yerel yeteneklerinden (Cloud Native) tam olarak yararlanması için kod ve mimarisini tamamen değiştirmek (örneğin, monolitik bir uygulamayı mikro hizmetlere dönüştürmek).	Uygulamanın ölçeklenebilirlik, esneklik ve inovasyon potansiyelini en üst düzeye çıkarmak için.	En yüksek çaba ve maliyet, ancak uzun vadede en büyük fayda.
+5. Retire	Artık işe yaramayan ve buluta taşınmasına gerek olmayan uygulamaları kapatmak/devre dışı bırakmaktır.	Kaynak israfını önlemek ve taşıma kapsamını daraltmak için.	Anında maliyet tasarrufu sağlar.
+6. Retain	Henüz buluta taşınamayacak veya taşınması mantıklı olmayan (yasal gereklilikler, çok yeni yatırım vb.) uygulamaları şirket içinde tutmaktır.	Henüz amorti edilmemiş donanım veya çok sıkı yasal kısıtlamalar olduğunda.	-
+7. Relocate	Sadece VMware Cloud on AWS (VMC on AWS) ile ilgili bir stratejidir. Mevcut VMware iş yüklerini VMC on AWS'e taşımak, donanım değiştirme ihtiyacını ortadan kaldırır.	VMC ortamını korumak ve AWS'in altyapısından yararlanmak istendiğinde.
     *   **Sınav İpucu**: Bu stratejilerin ne anlama geldiğini temel düzeyde bilmek faydalıdır. En yaygın olanı, uygulamayı olduğu gibi buluta taşımak anlamına gelen **Rehost**'tur.
 
 *   **Application Discovery Service & Application Migration Service (MGN)**
