@@ -789,6 +789,7 @@
 *   **Neden Önemlidir? (Why?)**: Uygulamalarınızın erişilebilirliğini ve güvenliğini tehdit eden yaygın siber saldırıları engeller.
 *   **Nasıl Çalışır? (How?)**: WAF, CloudFront, Application Load Balancer veya API Gateway'in önüne yerleştirilir. Gelen HTTP/S isteklerini, SQL injection veya Cross-Site Scripting (XSS) gibi yaygın saldırı modellerini içeren kurallara göre inceler ve zararlı istekleri engeller.
 *   **Sınav İpucu**: **Shield**, DDoS saldırılarına karşı korur. **WAF**, SQL injection gibi **web uygulaması saldırılarına** karşı korur. Shield Standard ücretsizdir ve otomatiktir.
+*   AWS Shield Advanced provides expanded DDoS attack protection for web applications running on the following resources: Amazon Elastic Compute Cloud, Elastic Load Balancing (ELB), Amazon CloudFront, Amazon Route 53, AWS Global Accelerator.
 
 #### **AWS Network Firewall & AWS Firewall Manager (AWS Ağ Güvenlik Duvarı ve AWS Güvenlik Duvarı Yöneticisi)**
 
