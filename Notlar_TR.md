@@ -243,6 +243,13 @@ Uygulama Güvenliği,	Müşterinin EC2'ye yüklediği uygulamanın içindeki gü
     *   **Scalability (Ölçeklenebilirlik)**: Bir sistemin artan iş yükünü karşılama kapasitesidir. Dikey (Scale Up: daha güçlü bir sunucu) veya Yatay (Scale Out: daha fazla sunucu) olabilir.
     *   **Elasticity (Esneklik)**: Talebe göre kaynakları otomatik olarak artırma (scale out) *ve* azaltma (scale in) yeteneğidir.
 *   **Sınav İpucu**: Yüksek Erişilebilirlik = **Multiple AZs**. Esneklik (Elasticity), sadece büyümek değil, aynı zamanda küçülerek maliyet tasarrufu sağlamaktır. Auto Scaling, esnekliğin en iyi örneğidir.
+### **Özet Karşılaştırma**
+
+| Kavram | Odak Noktası (Nedir?) | Ne Zaman Kullanılır? (Amacı) | Sınav İpucu |
+| :--- | :--- | :--- | :--- |
+| **High Availability** (Yüksek Erişilebilirlik) | **Kullanılabilir Süre** (**Uptime**) ve **Süreklilik**. | Bir bileşenin arıza yapsa bile **hizmet vermeye devam etmesi**. Kesintiyi önlemek. | Genellikle **Çoklu AZ (Cross-AZ)** dağıtımı ile sağlanır. (Örn: **RDS Multi-AZ**, **ELB/ASG** kullanımı). |
+| **Scalability** (Ölçeklenebilirlik) | **Performans artışı** için kapasite ekleme yeteneği. | Sistemin artan yüke dayanabilmesi için kaynakların **sabit bir şekilde** artırılması (veya azaltılması). | **Dikey** (Vertical - CPU/RAM artırma) veya **Yatay** (Horizontal - Sunucu sayısını artırma) olabilir. Yük artışını **planlama**. |
+| **Elasticity** (Esneklik) | **Talebe göre otomatik ve dinamik olarak uyum sağlama.** | Kaynakların, talebin artmasıyla **otomatik olarak artırılması** ve talebin düşmesiyle **otomatik olarak azaltılması** (serbest bırakılması). | Bu, **otomasyonu** ifade eder. AWS'de tipik olarak **Auto Scaling Group (ASG)** ile sağlanır. **Maliyet verimliliği** sağlar. |
 
 #### **Elastic Load Balancing (ELB) Overview (Elastik Yük Dengelemeye Genel Bakış)**
 
