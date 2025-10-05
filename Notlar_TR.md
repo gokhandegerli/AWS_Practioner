@@ -956,6 +956,14 @@ Uygulama Güvenliği,	Müşterinin EC2'ye yüklediği uygulamanın içindeki gü
     *   **AWS Cost and Usage Report (CUR)**: En detaylı maliyet ve kullanım verilerini içeren bir dosyadır. Genellikle analiz için kullanılır.
     *   **AWS Pricing Calculator**: AWS'de kurmayı planladığınız bir çözümün tahmini maliyetini hesaplamanızı sağlayan bir web aracıdır.
 *   **Sınav İpucu**: "Gelecekteki bir projenin maliyetini tahmin etmek" -> **Pricing Calculator**. "Geçmiş maliyetlerimi detaylı olarak analiz etmek" -> **Cost Explorer**. "Maliyetlerim bütçeyi aşarsa uyarılmak" -> **AWS Budgets**.
+*   Forecast (Tahmin) Hangi Araçlarda Bulunur?
+    AWS Cost Explorer: Geçmiş verileri analiz ederek 12 aya kadar gelecekteki maliyetleri tahmin eder ve görselleştirir.
+    
+    AWS Budgets: Maliyetlerin belirlenen bütçeyi aşacağını tahmin ettiğinde uyarı gönderme yeteneğine sahiptir (proaktif uyarı).
+    
+    AWS Pricing Calculator: Yeni projelerin (kullanıcı girdisine dayalı) gelecekteki maliyetlerini tahmin eder.
+    
+    CUR, ham veri kaynağıdır ve kendi başına tahmin yapmaz.
 
 #### **AWS Trusted Advisor**
 
