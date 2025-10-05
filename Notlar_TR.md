@@ -141,12 +141,7 @@ Uygulama Güvenliği,	Müşterinin EC2'ye yüklediği uygulamanın içindeki gü
 
 *   **Nedir? (What?)**: Farklı kullanım senaryoları için optimize edilmiş çeşitli EC2 instance aileleridir. (Örn: Genel Amaçlı - T ve M serisi, Hesaplama Optimize - C serisi, Bellek Optimize - R serisi).
 *   **Neden Önemlidir? (Why?)**: İş yükünüze en uygun donanımı seçerek hem performans hem de maliyet optimizasyonu yapmanızı sağlar.
-*   **Sınav İpucu**: Sınavda size bir senaryo verip (örn: "Yüksek performanslı bir veritabanı için hangi instance ailesi uygundur?"), doğru aileyi (Bellek Optimize - R) seçmeniz istenebilir.
-*   Maliyet ve Esneklik (Küçük Web Sitesi, Dev/Test)	T (Burst)	General Purpose (Burstable)
-Dengeli Performans (Orta Web Sunucusu, Uygulama Sunucusu)	M	General Purpose
-Yüksek RAM İhtiyacı (Veritabanı, Önbellek)	R	Memory Optimized
-Sürekli Yüksek CPU (Kodlama, Ağır Analiz)	C	Compute Optimized
-Grafik/Makine Öğrenimi (GPU)	P / G	Accelerated Computing
+*   **Sınav İpucu**: Sınavda size bir senaryo verip (örn: "Yüksek performanslı bir veritabanı için hangi instance ailesi uygundur?"), doğru aileyi (Bellek Optimize - R) seçmeniz istenebilir. Maliyet ve Esneklik (Küçük Web Sitesi, Dev/Test)	T (Burst)	General Purpose (Burstable). Dengeli Performans (Orta Web Sunucusu, Uygulama Sunucusu)	M	General Purpose. Yüksek RAM İhtiyacı (Veritabanı, Önbellek)	R	Memory Optimized. Sürekli Yüksek CPU (Kodlama, Ağır Analiz)	C	Compute Optimized. Grafik/Makine Öğrenimi (GPU)	P / G	Accelerated Computing
 
 #### **Security Groups & Classic Ports Overview (Güvenlik Grupları ve Klasik Portlara Genel Bakış)**
 
