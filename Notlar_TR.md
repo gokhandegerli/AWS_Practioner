@@ -39,7 +39,7 @@
     *   **Regions (Bölgeler)**: Dünyanın farklı coğrafi konumlarındaki fiziksel yerlerdir (Örn: Frankfurt, İrlanda). Her Region, diğerlerinden tamamen izoledir.
     *   **Availability Zones (AZ - Kullanılabilirlik Alanları)**: Bir Region içindeki bir veya daha fazla veri merkezinden oluşan, birbirinden izole alanlardır. Bir AZ'de sorun olsa bile diğerleri çalışmaya devam eder. Yüksek erişilebilirlik (High Availability) için kritik öneme sahiptir.
     *   **Edge Locations (Uç Konumlar)**: Son kullanıcılara daha yakın noktalarda bulunan ve içeriği önbelleğe alarak (caching) gecikmeyi azaltan veri merkezleridir. Amazon CloudFront (CDN) ve Route 53 (DNS) servisleri tarafından kullanılır.
-*   **Sınav İpucu**: Bir Region, en az iki (genellikle üç veya daha fazla) AZ'den oluşur. Yüksek erişilebilirlik (High Availability) için uygulamalarınızı birden fazla AZ'ye dağıtmalısınız. Edge Location'ların amacı düşük gecikme (low latency) sağlamaktır.
+*   **Sınav İpucu**: Bir Region, en az üç AZ'den oluşur. Yüksek erişilebilirlik (High Availability) için uygulamalarınızı birden fazla AZ'ye dağıtmalısınız. Edge Location'ların amacı düşük gecikme (low latency) sağlamaktır.
 
 #### **Shared Responsibility Model & AWS Acceptable Policy (Paylaşılan Sorumluluk Modeli ve AWS Kabul Edilebilir Politikası)**
 
